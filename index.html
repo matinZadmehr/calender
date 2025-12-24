@@ -349,7 +349,7 @@
         
         // CONFIGURATION - SET YOUR WEBHOOK URLS HERE
         const WEBHOOK_URL = 'https://aistudio.didbi.com/webhook/form/flight_scheduling'; // ← Change this!
-        const N8N_WEBHOOK_URL = 'https://aistudio.didbi.com/webhook/form/flight_scheduling'; // ← Optional direct n8n
+        
         
         // Store selected data
         window.selectedDate = null;
@@ -552,23 +552,7 @@
         }
         
         // Send directly to n8n (optional)
-        async function sendDirectlyToN8N(data) {
-            try {
-                const response = await fetch(N8N_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                return response.ok;
-                
-            } catch (error) {
-                console.error('Error sending to n8n:', error);
-                return false;
-            }
-        }
+        
         
         // Get user IP address
         async function getUserIP() {
